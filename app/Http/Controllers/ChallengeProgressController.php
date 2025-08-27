@@ -11,10 +11,6 @@ use Illuminate\Http\JsonResponse;
 
 class ChallengeProgressController extends Controller
 {
-    /**
-     * Store a newly created or update an existing resource in storage.
-     * POST /api/v1/users/{user}/challenge-progress
-     */
     public function store(Request $request, User $user): JsonResponse
     {
         $validator = Validator::make($request->all(), [
@@ -29,7 +25,6 @@ class ChallengeProgressController extends Controller
 
         $validated = $validator->validated();
 
-        // "Upsert" logic: Update if exists, or create if not.
         $progress = ChallengeProgress::updateOrCreate(
             [
                 'user_id'      => $user->id,
@@ -63,4 +58,12 @@ class ChallengeProgressController extends Controller
         ]);
     }
 
+    public function destroy(ChallengeProgress $progress): JsonResponse
+    {
+        $progress->delete();
+
+        return response()->json([
+            'message' => 'Progress successfully deleted'
+        ]);
+    }
 }

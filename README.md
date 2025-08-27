@@ -13,7 +13,7 @@ Menyediakan API yang mengelola data pengguna, autentikasi, dan penyimpanan progr
 - **Elemen Gamifikasi           :** Aplikasi ini menggabungkan elemen gamifikasi seperti poin, level, dan pencapaian untuk memotivasi pengguna.
 
 ## Teknologi yang Digunakan
-- **Laravel    :** framework utama untuk mengelola logika aplikasi dan menyediakan API.
+- **Laravel    :** Framework utama untuk mengelola logika aplikasi dan menyediakan API.
 - **PHP        :** Menjalankan server-side processing dan integrasi dengan database.
 
 ## Instalasi
@@ -22,34 +22,48 @@ Menyediakan API yang mengelola data pengguna, autentikasi, dan penyimpanan progr
     git clone https://github.com/pens-pbl/2025-timetocode-backend.git
     ```
 2. **Menyalin file .env:**
+   Linux / Mac
     ```bash
-    Buat file .env baru lalu salin .env.example
+    cp .env.example .env
+    ```
+    Windows (CMD)
+    ```bash
+    copy .env.example .env
     ```
 3. **Instal dependensi:**
     ```bash
     composer install
     ```
 4. **Membuat database SQLite:**
+   Linux / Mac
     ```bash
-    database/database.sqlite
+    touch database/database.sqlite
     ```
-5. **Membuat key:**
+    Windows (CMD)
+    ```bash
+    type nul > database\database.sqlite
+    ```
+6. **Membuat key:**
     ```bash
     php artisan key:generate
     ```
-6. **Menjalankan migrasi dan seeder:**
+7. **Menjalankan migrasi dan seeder:**
     ```bash
-    php artisan migrate \--seed
+    php artisan migrate --seed
     ```
 
 ## Penggunaan
-1. **Jalankan aplikasi:**
-    ```bash
-    flutter run
+1.  ```bash
+    php artisan serve
     ```
-2. Aplikasi akan diluncurkan di perangkat yang terhubung atau emulator.
-3. Dari menu utama, Anda dapat memilih antara "Mode Cerita" atau "Mode Tantangan" untuk mulai belajar.
-
+2.  ```bash
+    localhost 127.0.0.1:8000
+    ```
+    atau
+    
+     ```bash
+    localhost:8000
+    ```
 ## Variabel Lingkungan
 Proyek ini tidak memerlukan variabel lingkungan. Semua konfigurasi sudah disertakan dalam kode sumber.
 
