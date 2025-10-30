@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "rootDir": null,
+    "outDir": null,
+    "declaration": null,
+    "types": ["jest"]
+  },
+  "include": ["src", "tests"]
+}

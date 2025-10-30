@@ -1,74 +1,30 @@
+# Logic Gate WebSocket Server
 
-## Judul Proyek
-Time to Code - Backend
+This project is a WebSocket server for a real-time logic gate game, built with TypeScript, Socket.io, and tsyringe for dependency injection.
 
-## Deskripsi
-Menyediakan API yang mengelola data pengguna, autentikasi, dan penyimpanan progres pembelajaran. Menggunakan arsitektur berbasis RESTful, backend ini mendukung fitur-fitur seperti pengelolaan tantangan, pencapaian pengguna, dan elemen gamifikasi. Backend menyimpan data secara aman di database relasional dan memastikan komunikasi yang efisien antara aplikasi mobile dan server.
+## Running Unit Tests
 
-## Fitur
-- **Mode Cerita                 :** Sebuah visual novel interaktif yang mengajarkan konsep-konsep pemrograman melalui pengalaman berbasis narasi.
-- **Mode Tantangan              :** Serangkaian tantangan untuk menguji dan memperkuat konsep yang telah dipelajari di Mode Cerita.
-- **Mode Drag and Drop          :** Pengalaman pengkodean langsung di mana pengguna dapat menyeret dan menjatuhkan blok kode untuk menyelesaikan masalah.
-- **Penyimpanan Progres Lokal   :** Progres dan pengaturan pengguna disimpan secara lokal di perangkat untuk pengalaman yang lebih lancar.
-- **Elemen Gamifikasi           :** Aplikasi ini menggabungkan elemen gamifikasi seperti poin, level, dan pencapaian untuk memotivasi pengguna.
+This project uses **Jest** for unit testing. The test suite is configured to run in an ES Module environment.
 
-## Teknologi yang Digunakan
-- **Laravel    :** Framework utama untuk mengelola logika aplikasi dan menyediakan API.
-- **PHP        :** Menjalankan server-side processing dan integrasi dengan database.
+### Prerequisites
 
-## Instalasi
-1. **Kloning repositori:**
-    ```bash
-    git clone https://github.com/pens-pbl/2025-timetocode-backend.git
-    ```
-2. **Menyalin file .env:**
-   Linux / Mac
-    ```bash
-    cp .env.example .env
-    ```
-    Windows (CMD)
-    ```bash
-    copy .env.example .env
-    ```
-3. **Instal dependensi:**
-    ```bash
-    composer install
-    ```
-4. **Membuat database SQLite:**
-   Linux / Mac
-    ```bash
-    touch database/database.sqlite
-    ```
-    Windows (CMD)
-    ```bash
-    type nul > database\database.sqlite
-    ```
-6. **Membuat key:**
-    ```bash
-    php artisan key:generate
-    ```
-7. **Menjalankan migrasi dan seeder:**
-    ```bash
-    php artisan migrate --seed
-    ```
+- Node.js (LTS version recommended)
+- npm (which comes with Node.js)
 
-## Penggunaan
-1.  ```bash
-    php artisan serve
-    ```
-2.  ```bash
-    localhost 127.0.0.1:8000
-    ```
-    atau
-    
-     ```bash
-    localhost:8000
-    ```
-## Variabel Lingkungan
-Proyek ini tidak memerlukan variabel lingkungan. Semua konfigurasi sudah disertakan dalam kode sumber.
+### 1. Install Dependencies
 
-## Kontribusi
-Kontribusi sangat diterima! Jika Anda memiliki ide, saran, atau laporan bug, silahkan buka issue atau kirim pull request.
+First, clone the repository and navigate into the project's root directory. Then, install all the necessary dependencies listed in `package.json`:
 
-## Lisensi
-Proyek ini dilisensikan di bawah MIT License. Lihat file [LICENSE](LICENSE) untuk detail lebih lanjut.
+```bash
+npm install
+```
+
+### 2. Run the Test Suite
+
+To execute all unit tests, run the test script from package.json:
+
+```bash
+npm test
+```
+
+This command will automatically find and run all test files (ending in .test.ts) located in the tests/ directory. It executes Jest using cross-env and the `--experimental-vm-modules` flag to ensure compatibility with the project's ES Module setup.
